@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 		"\n\t[-f] <file> your TTF font to load"
 		"\n\t[-i] <msg> string to display"
 		"\n\t[-s] outline the string"
-		"\n\t[-x] <num> x offset for the string, usually 0-340"
+		"\n\t[-x] <num> x offset for the string, usually 0-320"
 		"\n\t[-y] <num> y offset for the string, usually 0-240"
 		"\n\t[-c] center the string"
 		"\n\t[-w] <num> weight/size of the font (default 15)"

@@ -53,7 +53,7 @@ Usage: ./osd2fb [-f] <font> [-i] <msg> [-s] [-x] [-y] [-c] [-w] [-o]
         [-f] <file> your TTF font to load
         [-i] <msg> string to display
         [-s] outline the string
-        [-x] <num> x offset for the string, usually 0-340
+        [-x] <num> x offset for the string, usually 0-320
         [-y] <num> y offset for the strinf, usually 0-240
         [-c] center the string
         [-w] <num> weight/size of the font (default 15)
