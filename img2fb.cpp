@@ -31,11 +31,12 @@ int main(int argc, char *argv[])
 {
 	int fd;
 	SDL_Rect dest = {0};
+	const char *opt = nullptr;
 	std::string filename = "";
 	uint32_t rmask = 0x0000f800, gmask = 0x000007e0, bmask = 0x0000001f, amask = 0x00000000;
 
-	if(cmdOptionExists(argv, argv+argc, "-i")) {
-		filename = std::string(getCmdOption(argv, argv+argc, "-i")).c_str();
+	if(opt = getCmdOption(argv, argv+argc, "-i")) {
+		filename = std::string(opt);
 	}
 
 	if(cmdOptionExists(argv, argv+argc, "-h") || cmdOptionExists(argv, argv+argc, "-help") || argc < 2 || filename.empty()) {
