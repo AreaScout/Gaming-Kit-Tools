@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
 	unsigned char buffer[PXLENGTH] = {0};
 	int x = 0, y = 0;
 	std::string osd_text;
+	const char *opt = NULL;
 
 	uint32_t rmask = 0x0000f800, gmask = 0x000007e0, bmask = 0x0000001f, amask = 0x00000000;
 	uint32_t rmask32 = 0x0000ff00, gmask32 = 0x00ff0000, bmask32 = 0xff000000, amask32 = 0x000000ff;
@@ -65,8 +66,8 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	if(cmdOptionExists(argv, argv+argc, "-w")) {
-		std::istringstream(std::string(getCmdOption(argv, argv+argc, "-w"))) >> fontsize;
+	if(opt = getCmdOption(argv, argv+argc, "-w")) {
+		std::istringstream(std::string(opt)) >> fontsize;
 	}
 
 	if ((fd = open("/dev/fb1", O_RDWR)) < 0) {
@@ -89,9 +90,9 @@ int main(int argc, char *argv[])
 
 	SDL_Surface *image = SDL_CreateRGBSurfaceFrom(buffer, 320, 240, 16, 640, rmask, gmask, bmask, amask);
 
-	if(cmdOptionExists(argv, argv+argc, "-o")) {
+	if(opt = getCmdOption(argv, argv+argc, "-o")) {
 		int tmp = 0;
-		std::istringstream(std::string(getCmdOption(argv, argv+argc, "-o"))) >> tmp;
+		std::istringstream(std::string(opt)) >> tmp;
 		if(tmp) {
 			dim = tmp;
 		}
@@ -124,12 +125,12 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	if(cmdOptionExists(argv, argv+argc, "-x")) {
-		std::istringstream(std::string(getCmdOption(argv, argv+argc, "-x"))) >> x;
+	if(opt = getCmdOption(argv, argv+argc, "-x")) {
+		std::istringstream(std::string(opt)) >> x;
 	}
 
-	if(cmdOptionExists(argv, argv+argc, "-y")) {
-		std::istringstream(std::string(getCmdOption(argv, argv+argc, "-y"))) >> y;
+	if(opt = getCmdOption(argv, argv+argc, "-y")) {
+		std::istringstream(std::string(opt)) >> y;
 	}
 
 	if(cmdOptionExists(argv, argv+argc, "-c")) {

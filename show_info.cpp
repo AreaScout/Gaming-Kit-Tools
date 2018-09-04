@@ -346,6 +346,7 @@ int main(int argc, char *argv[])
 	struct fb_fix_screeninfo finfo;
 	struct fb_var_screeninfo vinfo;
 	unsigned char buffer[PXLENGTH];
+	const char *opt = NULL;
 	int dim = 128; 
 
 	uint32_t rmask = 0x0000f800, gmask = 0x000007e0, bmask = 0x0000001f, amask = 0x00000000;
@@ -356,8 +357,8 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	if(cmdOptionExists(argv, argv+argc, "-d")) {
-		std::istringstream(std::string(getCmdOption(argv, argv+argc, "-d"))) >> dim;
+	if(opt = getCmdOption(argv, argv+argc, "-d")) {
+		std::istringstream(std::string(opt)) >> dim;
 		if(dim < 0 || dim > 255) {
 			fprintf(stderr, "Dim value to high\n");
 			exit(EXIT_FAILURE);
