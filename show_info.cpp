@@ -1,3 +1,15 @@
+/*
+ * osd2fb Copyright (C) 2018 Daniel Mehrwald
+ *
+ * Displays on screen info on the OGST Gaming Kit LCD
+ *
+ * This program is free software and comes with ABSOLUTELY NO WARRANTY;
+ * you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License as published by the Free Software Foundation;
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ */
+
 #include <algorithm>
 #include <assert.h>
 #include <errno.h>

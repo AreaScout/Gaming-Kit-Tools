@@ -1,3 +1,15 @@
+/*
+ * gpio_button Copyright (C) 2018 Daniel Mehrwald
+ *
+ * Access the user button of the OGST Gaming Kit
+ *
+ * This program is free software and comes with ABSOLUTELY NO WARRANTY;
+ * you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License as published by the Free Software Foundation;
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ */
+
 #include <algorithm>
 #include <stdio.h>
 #include <stdlib.h>
